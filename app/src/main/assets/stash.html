@@ -1,0 +1,62 @@
+<pre>Usage: fossil stash SUBCOMMAND ARGS...
+
+ fossil stash
+ fossil stash save ?-m|--comment COMMENT? ?FILES...?
+ fossil stash snapshot ?-m|--comment COMMENT? ?FILES...?
+
+    Save the current changes in the working tree as a new stash.
+    Then revert the changes back to the last check-in.  If FILES
+    are listed, then only stash and revert the named files.  The
+    "save" verb can be omitted if and only if there are no other
+    arguments.  The "snapshot" verb works the same as "save" but
+    omits the revert, keeping the check-out unchanged.
+
+ fossil stash list ?-v|--verbose?
+ fossil stash ls ?-v|--verbose?
+
+    List all changes sets currently stashed.  Show information about
+    individual files in each changeset if -v or --verbose is used.
+
+ fossil stash show ?STASHID? ?DIFF-FLAGS?
+
+    Show the content of a stash
+
+ fossil stash pop
+ fossil stash apply ?STASHID?
+
+    Apply STASHID or the most recently create stash to the current
+    working check-out.  The "pop" command deletes that changeset from
+    the stash after applying it but the "apply" command retains the
+    changeset.
+
+ fossil stash goto ?STASHID?
+
+    Update to the baseline checkout for STASHID then apply the
+    changes of STASHID.  Keep STASHID so that it can be reused
+    This command is undoable.
+
+ fossil stash drop ?STASHID? ?-a|--all?
+ fossil stash rm   ?STASHID? ?-a|--all?
+
+    Forget everything about STASHID.  Forget the whole stash if the
+    -a|--all flag is used.  Individual drops are undoable but -a|--all
+    is not.
+
+ fossil stash diff ?STASHID?
+ fossil stash gdiff ?STASHID?
+
+    Show diffs of the current working directory and what that
+    directory would be if STASHID were applied.
+
+SUMMARY:
+ fossil stash
+ fossil stash save ?-m|--comment COMMENT? ?FILES...?
+ fossil stash snapshot ?-m|--comment COMMENT? ?FILES...?
+ fossil stash list|ls  ?-v|--verbose? ?-W|--width <num>?
+ fossil stash show ?STASHID? ?DIFF-OPTIONS?
+ fossil stash pop
+ fossil stash apply ?STASHID?
+ fossil stash goto ?STASHID?
+ fossil stash rm|drop ?STASHID? ?-a|--all?
+ fossil stash [g]diff ?STASHID? ?DIFF-OPTIONS?
+</pre>

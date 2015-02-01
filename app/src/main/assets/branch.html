@@ -1,0 +1,25 @@
+<pre>Usage: fossil branch SUBCOMMAND ... ?OPTIONS?
+
+Run various subcommands to manage branches of the open repository or
+of the repository identified by the -R or --repository option.
+
+   fossil branch new BRANCH-NAME BASIS ?OPTIONS?
+
+       Create a new branch BRANCH-NAME off of check-in BASIS.
+       Supported options for this subcommand include:
+       --private             branch is private (i.e., remains local)
+       --bgcolor COLOR       use COLOR instead of automatic background
+       --nosign              do not sign contents on this branch
+       --date-override DATE  DATE to use instead of 'now'
+       --user-override USER  USER to use instead of the current default
+
+   fossil branch list ?-a|--all|-c|--closed?
+   fossil branch ls ?-a|--all|-c|--closed?
+
+       List all branches.  Use -a or --all to list all branches and
+       -c or --closed to list all closed branches.  The default is to
+       show only open branches.
+
+Options:
+   -R|--repository FILE       Run commands on repository FILE
+</pre>

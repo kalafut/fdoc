@@ -1,0 +1,28 @@
+<pre>Usage: fossil new ?OPTIONS? FILENAME
+   Or: fossil init ?OPTIONS? FILENAME
+
+Create a repository for a new project in the file named FILENAME.
+This command is distinct from "clone".  The "clone" command makes
+a copy of an existing project.  This command starts a new project.
+
+By default, your current login name is used to create the default
+admin user. This can be overridden using the -A|--admin-user
+parameter.
+
+By default, all settings will be initialized to their default values.
+This can be overridden using the --template parameter to specify a
+repository file from which to copy the initial settings.  When a template
+repository is used, almost all of the settings accessible from the setup
+page, either directly or indirectly, will be copied.  Normal users and
+their associated permissions will not be copied; however, the system
+default users "anonymous", "nobody", "reader", "developer", and their
+associated permissions will be copied.
+
+Options:
+   --template      FILE      copy settings from repository file
+   --admin-user|-A USERNAME  select given USERNAME as admin user
+   --date-override DATETIME  use DATETIME as time of the initial checkin
+                             (default: do not create an initial checkin)
+
+See also: clone
+</pre>

@@ -1,0 +1,47 @@
+<pre>Usage: fossil server ?OPTIONS? ?REPOSITORY?
+   Or: fossil ui ?OPTIONS? ?REPOSITORY?
+
+Open a socket and begin listening and responding to HTTP requests on
+TCP port 8080, or on any other TCP port defined by the -P or
+--port option.  The optional argument is the name of the repository.
+The repository argument may be omitted if the working directory is
+within an open checkout.
+
+The "ui" command automatically starts a web browser after initializing
+the web server.  The "ui" command also binds to 127.0.0.1 and so will
+only process HTTP traffic from the local machine.
+
+The REPOSITORY can be a directory (aka folder) that contains one or
+more repositories with names ending in ".fossil".  In this case, the
+a prefix of the URL pathname is used to search the directory for an
+appropriate repository.  To thwart mischief, the pathname in the URL must
+contain only alphanumerics, "_", "/", "-", and ".", and no "-" may
+occur after "/", and every "." must be surrounded on both sides by
+alphanumerics.  Any pathname that does not satisfy these constraints
+results in a 404 error.  Files in REPOSITORY that match the comma-separated
+list of glob patterns given by --files and that have known suffixes
+such as ".txt" or ".html" or ".jpeg" and do not match the pattern
+"*.fossil*" will be served as static content.  With the "ui" command,
+the REPOSITORY can only be a directory if the --notfound option is
+also present.
+
+By default, the "ui" command provides full administrative access without
+having to log in.  This can be disabled by setting turning off the
+"localauth" setting.  Automatic login for the "server" command is available
+if the --localauth option is present and the "localauth" setting is off
+and the connection is from localhost.  The optional REPOSITORY argument
+to "ui" may be a directory and will function as "server" if and only if
+the --notfound option is used.
+
+Options:
+  --localauth         enable automatic login for requests from localhost
+  --localhost         listen on 127.0.0.1 only (always true for "ui")
+  -P|--port TCPPORT   listen to request on port TCPPORT
+  --th-trace          trace TH1 execution (for debugging purposes)
+  --baseurl URL       Use URL as the base (useful for reverse proxies)
+  --notfound URL      Redirect
+  --files GLOBLIST    Comma-separated list of glob patterns for static files
+  --scgi              Accept SCGI rather than HTTP
+
+See also: cgi, http, winsrv
+</pre>

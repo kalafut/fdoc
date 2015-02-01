@@ -1,0 +1,37 @@
+<pre>Usage: fossil timeline ?WHEN? ?CHECKIN|DATETIME? ?OPTIONS?
+
+Print a summary of activity going backwards in date and time
+specified or from the current date and time if no arguments
+are given.  The WHEN argument can be any unique abbreviation
+of one of these keywords:
+
+    before
+    after
+    descendants | children
+    ancestors | parents
+
+The BASELINE can be any unique prefix of 4 characters or more.
+The DATETIME should be in the ISO8601 format.  For
+examples: "2007-08-18 07:21:21".  You can also say "current"
+for the current version or "now" for the current time.
+
+Options:
+  -n|--limit N         Output the first N entries (default 20 lines).
+                       N=0 means no limit.
+  -p|--path PATH       Output items affecting PATH only. 
+                       PATH can be a file or a sub directory.
+  --offset P           skip P changes
+  -t|--type TYPE       Output items from the given types only, such as:
+                           ci = file commits only
+                           e  = events only
+                           t  = tickets only
+                           w  = wiki commits only
+  -v|--verbose         Output the list of files changed by each commit
+                       and the type of each change (edited, deleted,
+                       etc.) after the checkin comment.
+  -W|--width <num>     Width of lines (default is to auto-detect). Must be
+                       >20 or 0 (= no limit, resulting in a single line per
+                       entry).
+  -R REPO_FILE         Specifies the repository db to use. Default is
+                       the current checkout's repository.
+</pre>

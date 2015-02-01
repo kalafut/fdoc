@@ -1,0 +1,18 @@
+<pre>Usage: fossil open FILENAME ?VERSION? ?OPTIONS?
+
+Open a connection to the local repository in FILENAME.  A checkout
+for the repository is created with its root at the working directory.
+If VERSION is specified then that version is checked out.  Otherwise
+the latest version is checked out.  No files other than "manifest"
+and "manifest.uuid" are modified if the --keep option is present.
+
+Options:
+  --empty           Initialize checkout as being empty, but still connected
+                    with the local repository. If you commit this checkout,
+                    it will become a new "initial" commit in the repository.
+  --keep            Only modify the manifest and manifest.uuid files
+  --nested          Allow opening a repository inside an opened checkout
+  --force-missing   Force opening a repository with missing content
+
+See also: close
+</pre>

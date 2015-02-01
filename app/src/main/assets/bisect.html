@@ -1,0 +1,56 @@
+<pre>Usage: fossil bisect SUBCOMMAND ...
+
+Run various subcommands useful for searching for bugs.
+
+  fossil bisect bad ?VERSION?
+
+    Identify version VERSION as non-working.  If VERSION is omitted,
+    the current checkout is marked as non-working.
+
+  fossil bisect good ?VERSION?
+
+    Identify version VERSION as working.  If VERSION is omitted,
+    the current checkout is marked as working.
+
+  fossil bisect log
+  fossil bisect chart
+
+    Show a log of "good" and "bad" versions.  "bisect log" shows the
+    events in the order that they were tested.  "bisect chart" shows
+    them in order of check-in.
+
+  fossil bisect next
+
+    Update to the next version that is halfway between the working and
+    non-working versions.
+
+  fossil bisect options ?NAME? ?VALUE?
+
+    List all bisect options, or the value of a single option, or set the
+    value of a bisect option.
+
+  fossil bisect reset
+
+    Reinitialize a bisect session.  This cancels prior bisect history
+    and allows a bisect session to start over from the beginning.
+
+  fossil bisect vlist|ls|status ?-a|--all?
+
+    List the versions in between "bad" and "good".
+
+  fossil bisect undo
+
+    Undo the most recent "good" or "bad" command.
+
+Summary:
+
+  fossil bisect bad ?VERSION?
+  fossil bisect good ?VERSION?
+  fossil bisect log
+  fossil bisect chart
+  fossil bisect next
+  fossil bisect options
+  fossil bisect reset
+  fossil bisect status
+  fossil bisect undo
+</pre>

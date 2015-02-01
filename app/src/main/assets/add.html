@@ -1,0 +1,35 @@
+<pre>Usage: fossil add ?OPTIONS? FILE1 ?FILE2 ...?
+
+Make arrangements to add one or more files or directories to the
+current checkout at the next commit.
+
+When adding files or directories recursively, filenames that begin
+with "." are excluded by default.  To include such files, add
+the "--dotfiles" option to the command-line.
+
+The --ignore and --clean options are comma-separate lists of glob patterns
+for files to be excluded.  Example:  '*.o,*.obj,*.exe'  If the --ignore
+option does not appear on the command line then the "ignore-glob" setting
+is used.  If the --clean option does not appear on the command line then
+the "clean-glob" setting is used.
+
+If files are attempted to be added explicitly on the command line which
+match "ignore-glob", a confirmation is asked first. This can be prevented
+using the -f|--force option.
+
+The --case-sensitive option determines whether or not filenames should
+be treated case sensitive or not. If the option is not given, the default
+depends on the global setting, or the operating system default, if not set.
+
+Options:
+
+   --case-sensitive <BOOL> override case-sensitive setting
+   --dotfiles              include files beginning with a dot (".")
+   -f|--force              Add files without prompting
+   --ignore <CSG>          ignore files matching patterns from the
+                           comma separated list of glob patterns.
+   --clean <CSG>           also ignore files matching patterns from
+                           the comma separated list of glob patterns.
+
+See also: addremove, rm
+</pre>

@@ -1,0 +1,16 @@
+<pre>Usage: fossil publish ?--only? TAGS...
+
+Cause artifacts identified by TAGS... to be published (made non-private).
+This can be used (for example) to convert a private branch into a public
+branch, or to publish a bundle that was imported privately.
+
+If any of TAGS names a branch, then all checkins on the most recent
+instance of that branch are included, not just the most recent checkin.
+
+If any of TAGS name checkins then all files and tags associated with
+those checkins are also published automatically.  Except if the --only
+option is used, then only the specific artifacts identified by TAGS
+are published.
+
+If a TAG is already public, this command is a harmless no-op.
+</pre>

@@ -1,0 +1,34 @@
+<pre>Usage: fossil finfo ?OPTIONS? FILENAME
+
+Print the complete change history for a single file going backwards
+in time.  The default mode is -l.
+
+For the -l|--log mode: If "-b|--brief" is specified one line per revision
+is printed, otherwise the full comment is printed.  The "-n|--limit N"
+and "--offset P" options limits the output to the first N changes
+after skipping P changes.
+
+In the -s mode prints the status as <status> <revision>.  This is
+a quick status and does not check for up-to-date-ness of the file.
+
+In the -p mode, there's an optional flag "-r|--revision REVISION".
+The specified version (or the latest checked out version) is printed
+to stdout.  The -p mode is another form of the "cat" command.
+
+Options:
+  -b|--brief           display a brief (one line / revision) summary
+  --case-sensitive B   Enable or disable case-sensitive filenames.  B is a
+                       boolean: "yes", "no", "true", "false", etc.
+  -l|--log             select log mode (the default)
+  -n|--limit N         display the first N changes. N=0 means no limit.
+  --offset P           skip P changes
+  -p|--print           select print mode
+  -r|--revision R      print the given revision (or ckout, if none is given)
+                       to stdout (only in print mode)
+  -s|--status          select status mode (print a status indicator for FILE)
+  -W|--width <num>     Width of lines (default is to auto-detect). Must be
+                       >22 or 0 (= no limit, resulting in a single line per
+                       entry).
+
+See also: artifact, cat, descendants, info, leaves
+</pre>

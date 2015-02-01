@@ -1,0 +1,22 @@
+<pre>Usage: fossil sync ?URL? ?options?
+
+Synchronize the local repository with a remote repository.  This is
+the equivalent of running both "push" and "pull" at the same time.
+Use the "-R REPO" or "--repository REPO" command-line options
+to specify an alternative repository file.
+
+See clone usage for possible URL formats.
+
+If the URL is not specified, then the URL from the most recent
+successful clone, push, pull, remote-url, or sync command is used.
+
+The URL specified normally becomes the new "remote-url" used for
+subsequent push, pull, and sync operations.  However, the "--once"
+command-line option makes the URL a one-time-use URL that is not
+saved.
+
+Use the --private option to sync private branches with the
+remote repository.
+
+See also:  clone, push, pull, remote-url
+</pre>

@@ -1,0 +1,39 @@
+<pre>Usage: fossil addremove ?OPTIONS?
+
+Do all necessary "add" and "rm" commands to synchronize the repository
+with the content of the working checkout:
+
+ *  All files in the checkout but not in the repository (that is,
+    all files displayed using the "extras" command) are added as
+    if by the "add" command.
+
+ *  All files in the repository but missing from the checkout (that is,
+    all files that show as MISSING with the "status" command) are
+    removed as if by the "rm" command.
+
+The command does not "commit".  You must run the "commit" separately
+as a separate step.
+
+Files and directories whose names begin with "." are ignored unless
+the --dotfiles option is used.
+
+The --ignore option overrides the "ignore-glob" setting, as do the
+--case-sensitive option with the "case-sensitive" setting and the
+--clean option with the "clean-glob" setting. See the documentation
+on the "settings" command for further information.
+
+The -n|--dry-run option shows what would happen without actually doing anything.
+
+This command can be used to track third party software.
+
+Options:
+  --case-sensitive <BOOL> override case-sensitive setting
+  --dotfiles              include files beginning with a dot (".")
+  --ignore <CSG>          ignore files matching patterns from the
+                          comma separated list of glob patterns.
+  --clean <CSG>           also ignore files matching patterns from
+                          the comma separated list of glob patterns.
+  -n|--dry-run            If given, display instead of run actions
+
+See also: add, rm
+</pre>

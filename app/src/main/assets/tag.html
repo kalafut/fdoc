@@ -1,0 +1,51 @@
+<pre>Usage: fossil tag SUBCOMMAND ...
+
+Run various subcommands to control tags and properties
+
+    fossil tag add ?--raw? ?--propagate? TAGNAME CHECK-IN ?VALUE?
+
+        Add a new tag or property to CHECK-IN. The tag will
+        be usable instead of a CHECK-IN in commands such as
+        update and merge.  If the --propagate flag is present,
+        the tag value propagates to all descendants of CHECK-IN
+
+    fossil tag cancel ?--raw? TAGNAME CHECK-IN
+
+        Remove the tag TAGNAME from CHECK-IN, and also remove
+        the propagation of the tag to any descendants.
+
+    fossil tag find ?--raw? ?-t|--type TYPE? ?-n|--limit #? TAGNAME
+
+        List all objects that use TAGNAME.  TYPE can be "ci" for
+        checkins or "e" for events. The limit option limits the number
+        of results to the given value.
+
+    fossil tag list|ls ?--raw? ?CHECK-IN?
+
+        List all tags, or if CHECK-IN is supplied, list
+        all tags and their values for CHECK-IN.
+
+The option --raw allows the manipulation of all types of tags
+used for various internal purposes in fossil. It also shows
+"cancel" tags for the "find" and "list" subcommands. You should
+not use this option to make changes unless you are sure what
+you are doing.
+
+If you need to use a tagname that might be confused with
+a hexadecimal baseline or artifact ID, you can explicitly
+disambiguate it by prefixing it with "tag:". For instance:
+
+  fossil update decaf
+
+will be taken as an artifact or baseline ID and fossil will
+probably complain that no such revision was found. However
+
+  fossil update tag:decaf
+
+will assume that "decaf" is a tag/branch name.
+
+only allow --date-override and --user-override in
+  fossil tag add --date-override 'YYYY-MMM-DD HH:MM:SS' \
+                  --user-override user
+in order to import history from other scm systems
+</pre>

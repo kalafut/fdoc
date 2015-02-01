@@ -1,0 +1,21 @@
+<pre>Usage: fossil rebuild ?REPOSITORY? ?OPTIONS?
+
+Reconstruct the named repository database from the core
+records.  Run this command after updating the fossil
+executable in a way that changes the database schema.
+
+Options:
+  --cluster     Compute clusters for unclustered artifacts
+  --compress    Strive to make the database as small as possible
+  --force       Force the rebuild to complete even if errors are seen
+  --noverify    Skip the verification of changes to the BLOB table
+  --pagesize N  Set the database pagesize to N. (512..65536 and power of 2)
+  --randomize   Scan artifacts in a random order
+  --vacuum      Run VACUUM on the database after rebuilding
+  --deanalyze   Remove ANALYZE tables from the database
+  --analyze     Run ANALYZE on the database after rebuilding
+  --wal         Set Write-Ahead-Log journalling mode on the database
+  --stats       Show artifact statistics after rebuilding
+
+See also: deconstruct, reconstruct
+</pre>

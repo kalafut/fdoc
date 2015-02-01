@@ -1,0 +1,56 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="catalog">
+        <item>add</item>
+        <item>changes</item>
+        <item>gdiff</item>
+        <item>praise</item>
+        <item>rss</item>
+        <item>undo</item>
+        <item>addremove</item>
+        <item>clean</item>
+        <item>help</item>
+        <item>publish</item>
+        <item>settings</item>
+        <item>unpublished</item>
+        <item>all</item>
+        <item>clone</item>
+        <item>import</item>
+        <item>pull</item>
+        <item>sqlite3</item>
+        <item>update</item>
+        <item>annotate</item>
+        <item>commit</item>
+        <item>info</item>
+        <item>purge</item>
+        <item>stash</item>
+        <item>version</item>
+        <item>bisect</item>
+        <item>diff</item>
+        <item>init</item>
+        <item>push</item>
+        <item>status</item>
+        <item>blame</item>
+        <item>export</item>
+        <item>ls</item>
+        <item>rebuild</item>
+        <item>sync</item>
+        <item>branch</item>
+        <item>extras</item>
+        <item>merge</item>
+        <item>remote-url</item>
+        <item>tag</item>
+        <item>bundle</item>
+        <item>finfo</item>
+        <item>mv</item>
+        <item>revert</item>
+        <item>timeline</item>
+        <item>cat</item>
+        <item>fusefs</item>
+        <item>open</item>
+        <item>rm</item>
+        <item>ui</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,27 @@
+<pre>Usage: fossil export --git ?OPTIONS? ?REPOSITORY?
+
+Write an export of all check-ins to standard output.  The export is
+written in the git-fast-export file format assuming the --git option is
+provided.  The git-fast-export format is currently the only VCS
+interchange format supported, though other formats may be added in
+the future.
+
+Run this command within a checkout.  Or use the -R or --repository
+option to specify a Fossil repository to be exported.
+
+Only check-ins are exported using --git.  Git does not support tickets
+or wiki or events or attachments, so none of those are exported.
+
+If the "--import-marks FILE" option is used, it contains a list of
+rids to skip.
+
+If the "--export-marks FILE" option is used, the rid of all commits and
+blobs written on exit for use with "--import-marks" on the next run.
+
+Options:
+  --export-marks FILE          export rids of exported data to FILE
+  --import-marks FILE          read rids of data to ignore from FILE
+  --repository|-R REPOSITORY   export the given REPOSITORY
+
+See also: import
+</pre>

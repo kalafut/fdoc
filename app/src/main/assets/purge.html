@@ -1,0 +1,43 @@
+<pre>The purge command removes content from a repository and stores that content
+in a "graveyard".  The graveyard exists so that content can be recovered
+using the "fossil purge undo" command.
+
+  fossil purge cat UUID...
+
+     Write the content of one or more artifacts in the graveyard onto
+     standard output.
+
+  fossil purge ?checkins? TAGS... ?OPTIONS?
+
+     Move the checkins identified by TAGS and all of their descendants
+     out of the repository and into the graveyard.  The "checkins" 
+     subcommand keyword is option and can be omitted as long as TAGS
+     does not conflict with any other subcommand.
+
+     If a TAGS includes a branch name then it means all the checkins
+     on the most recent occurrance of that branch.
+
+          --explain         Make no changes, but show what would happen.
+          --dry-run         Make no chances.
+
+  fossil purge list|ls ?-l?
+
+     Show the graveyard of prior purges.  The -l option gives more
+     detail in the output.
+
+  fossil purge obliterate ID...
+
+     Remove one or more purge events from the graveyard.  Once a purge
+     event is obliterated, it can no longer be undone.
+
+  fossil purge undo ID
+
+     Restore the content previously removed by purge ID.
+
+SUMMARY:
+  fossil purge cat UUID...
+  fossil purge [checkins] TAGS... [--explain]
+  fossil purge list
+  fossil purge obliterate ID...
+  fossil purge undo ID
+</pre>

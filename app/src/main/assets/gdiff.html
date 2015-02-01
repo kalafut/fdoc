@@ -1,0 +1,49 @@
+<pre>Usage: fossil diff|gdiff ?OPTIONS? ?FILE1? ?FILE2 ...?
+
+Show the difference between the current version of each of the FILEs
+specified (as they exist on disk) and that same file as it was checked
+out.  Or if the FILE arguments are omitted, show the unsaved changed
+currently in the working check-out.
+
+If the "--from VERSION" or "-r VERSION" option is used it specifies
+the source check-in for the diff operation.  If not specified, the
+source check-in is the base check-in for the current check-out.
+
+If the "--to VERSION" option appears, it specifies the check-in from
+which the second version of the file or files is taken.  If there is
+no "--to" option then the (possibly edited) files in the current check-out
+are used.
+
+The "-i" command-line option forces the use of the internal diff logic
+rather than any external diff program that might be configured using
+the "setting" command.  If no external diff program is configured, then
+the "-i" option is a no-op.  The "-i" option converts "gdiff" into "diff".
+
+The "-N" or "--new-file" option causes the complete text of added or
+deleted files to be displayed.
+
+The "--diff-binary" option enables or disables the inclusion of binary files
+when using an external diff program.
+
+The "--binary" option causes files matching the glob PATTERN to be treated
+as binary when considering if they should be used with external diff program.
+This option overrides the "binary-glob" setting.
+
+Options:
+  --binary PATTERN           Treat files that match the glob PATTERN as binary
+  --branch BRANCH            Show diff of all changes on BRANCH
+  --brief                    Show filenames only
+  --context|-c N             Use N lines of context
+  --diff-binary BOOL         Include binary files when using external commands
+  --from|-r VERSION          select VERSION as source for the diff
+  --internal|-i              use internal diff logic
+  --side-by-side|-y          side-by-side diff
+  --strip-trailing-cr        Strip trailing CR
+  --tk                       Launch a Tcl/Tk GUI for display
+  --to VERSION               select VERSION as target for the diff
+  --unified                  unified diff
+  -v|--verbose               output complete text of added or deleted files
+  -w|--ignore-all-space      Ignore white space when comparing lines
+  -W|--width <num>           Width of lines in side-by-side diff
+  -Z|--ignore-trailing-space Ignore changes to end-of-line whitespace
+</pre>
