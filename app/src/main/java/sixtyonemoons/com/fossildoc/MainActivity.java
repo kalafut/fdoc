@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -135,6 +136,11 @@ public class MainActivity extends ActionBarActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            WebView w = (WebView)rootView.findViewById((R.id.webView));
+            if(w != null) {
+                String s  = w.getUrl();
+                w.loadUrl("file:///android_asset/go.html");
+            }
             return rootView;
         }
 
