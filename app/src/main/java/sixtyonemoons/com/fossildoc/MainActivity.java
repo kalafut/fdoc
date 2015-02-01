@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -46,15 +47,22 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-    }
-
-    @Override
-    public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, PlaceholderFragment.newInstance(1))
                 .commit();
+    }
+
+    @Override
+    public void onNavigationDrawerItemSelected(String section) {
+        WebView w = (WebView)findViewById((R.id.webView));
+        if(w != null) {
+            String s  = w.getUrl();
+
+            Log.d("out", section);
+            w.loadUrl("file:///android_asset/" + section + ".html");
+        }
     }
 
     public void onSectionAttached(int number) {
@@ -139,7 +147,7 @@ public class MainActivity extends ActionBarActivity
             WebView w = (WebView)rootView.findViewById((R.id.webView));
             if(w != null) {
                 String s  = w.getUrl();
-                w.loadUrl("file:///android_asset/go.html");
+                w.loadUrl("file:///android_asset/diff.html");
             }
             return rootView;
         }
