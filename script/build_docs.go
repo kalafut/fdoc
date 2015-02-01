@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"sort"
 	"strings"
 	"text/template"
 )
@@ -27,7 +28,7 @@ func main() {
 func commandList() []string {
 	var cmds []string
 
-	out, err := exec.Command("fossil", "help").Output()
+	out, err := exec.Command("fossil", "help", "-all").Output()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -37,6 +38,8 @@ func commandList() []string {
 	for _, s := range lines {
 		cmds = append(cmds, strings.Fields(s)...)
 	}
+
+	sort.Strings(cmds)
 
 	return cmds
 }
@@ -57,8 +60,8 @@ func extractHelp(cmd string) {
 }
 
 func genCatalog(cmds []string) {
-	template := template.Must(template.New("").Parse(`
-<?xml version="1.0" encoding="utf-8"?>
+	template := template.Must(template.New("").Parse(
+		`<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="catalog">
 {{ range . }}        <item>{{.}}</item>
